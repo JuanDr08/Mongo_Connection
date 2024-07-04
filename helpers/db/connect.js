@@ -22,7 +22,7 @@ export class connect {
     #host;
     #cluster;
     #dbName
-    constructor({user : u, port : p, pass: w, host: h, cluster: c, dbName: d} = {user: "juandavidrodriguez890", port: 3000, pass: 'tG0RjXhRjqrLljM2', host: 'mongodb+srv://', cluster: "@cluster0.5qmhwzi.mongodb.net", dbName: 'test'}) {
+    constructor({user : u, port : p, pass: w, host: h, cluster: c, dbName: d} = {user: "mongo", port: 47797, pass: 'PNSmQbwecKrbuFTCqXmYoaqicgEZpFeF', host: 'mongodb://', cluster: "monorail.proxy.rlwy.net", dbName: 'test'}) {
         if(typeof connect.instance === 'object'){
             return connect.instance;
         }
@@ -65,13 +65,13 @@ export class connect {
         await this.#open();
     }
     async #open () {
-        this.conexion = new MongoClient(`mongodb://mongo:PNSmQbwecKrbuFTCqXmYoaqicgEZpFeF@monorail.proxy.rlwy.net:47797/`)
+        this.conexion = new MongoClient(`mongodb://${this.user}:${this.getPass}@${this.getCluster}:${this.port}/`)
         await this.conexion.connect();
         
     }
-    async close(){
-        await this.conexion.close();
-    }
+    // async close(){
+    //     await this.conexion.close();
+    // }
 }
 
 // mongodb+srv://juandavidrodriguez890:tG0RjXhRjqrLljM2@cluster0.5qmhwzi.mongodb.net/

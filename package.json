@@ -1,0 +1,15 @@
+{
+  "name": "mongodb",
+  "version": "0.0.1",
+  "description": "Como conectar js a mongo db con POO",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch main.js"
+  },
+  "author": "JDRO",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "6.8.0"
+  }
+}

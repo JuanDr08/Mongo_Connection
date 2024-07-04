@@ -20,7 +20,7 @@
 4. **Buscar películas con un personaje apodado "Cobb":**
 
    ``` javascript
-  db.movie.find({character: {$elemMatch: {apodo: "Cobb"}}},{name: 1,"character.apodo": 1})
+   db.movie.find({character: {$elemMatch: {apodo: "Cobb"}}},{name: 1,"character.apodo": 1})
    ```
 
 5. **Buscar películas con actores de id 2 y 3:**
